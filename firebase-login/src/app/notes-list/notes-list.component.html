@@ -1,0 +1,9 @@
+<div class="notes-list-container">
+  <h1>Your Notes</h1>
+  <ul>
+    <li *ngFor="let note of notes$ | async">
+      <h3>{{ note.title }}</h3>
+      <p>{{ note.content }}</p>
+    </li>
+  </ul>
+</div>
