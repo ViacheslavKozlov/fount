@@ -1,24 +1,20 @@
-import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
+import { BrowserModule } from '@angular/platform-browser'
 import { FormsModule } from '@angular/forms'
 import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth'
-import { RouterModule, Routes } from '@angular/router' // Import RouterModule and Routes
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database'
 import { environment } from '../environments/environment'
-
+import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { LoginComponent } from './login/login.component'
 import { HomeComponent } from './home/home.component'
 import { CreateNoteComponent } from './create-note/create-note.component'
 import { NotesListComponent } from './notes-list/notes-list.component'
-import { AuthService } from './auth.service' // Import AuthService
-
-const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'create-note', component: CreateNoteComponent }, // Add the route for creating a note
-  { path: 'notes', component: NotesListComponent }, // Add the route for the Notes List component
-  { path: '', component: HomeComponent }, // Empty path for the home page
-]
+import { AuthService } from './auth.service'
+import { AuthGuard } from './auth.guard'
+import { LogoutButtonComponent } from './logout-button/logout-button.component'
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component'
 
 @NgModule({
   declarations: [
@@ -27,15 +23,18 @@ const appRoutes: Routes = [
     HomeComponent,
     CreateNoteComponent,
     NotesListComponent,
+    LogoutButtonComponent,
+    NavigationBarComponent, // Include the NavigationBarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    RouterModule.forRoot(appRoutes), // Configure the routes here
+    AngularFireDatabaseModule,
+    AppRoutingModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,0 +1,11 @@
+<nav class="navigation-bar">
+  <a routerLink="/create-note">Create Note</a>
+  <a routerLink="/notes">View Notes</a>
+  <button
+    *ngIf="isAuthenticated && !isLoginPage"
+    class="logout-button"
+    (click)="logout()"
+  >
+    Logout
+  </button>
+</nav>

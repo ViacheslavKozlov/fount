@@ -1,9 +1,12 @@
 <div class="notes-list-container">
-  <h1>Your Notes</h1>
-  <ul>
-    <li *ngFor="let note of notes$ | async">
-      <h3>{{ note.title }}</h3>
-      <p>{{ note.content }}</p>
-    </li>
-  </ul>
+  <h1 class="notes-list-title">Your Notes</h1>
+  <div *ngIf="notes$ | async as notes; else noNotes" class="notes-list">
+    <div class="note-card" *ngFor="let note of notes">
+      <h2 class="note-title">{{ note.title }}</h2>
+      <p class="note-content">{{ note.content }}</p>
+    </div>
+  </div>
+  <ng-template #noNotes>
+    <p class="empty-notes">You haven't created any notes yet.</p>
+  </ng-template>
 </div>

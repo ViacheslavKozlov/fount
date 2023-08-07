@@ -1,0 +1,31 @@
+.navigation-bar {
+  display: flex;
+  justify-content: space-between; /* Align items at the ends */
+  background-color: #333;
+  padding: 10px 20px;
+  align-items: center; /* Center vertically */
+}
+
+.navigation-bar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navigation-bar a:hover {
+  text-decoration: underline;
+}
+
+.logout-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}

@@ -7,11 +7,16 @@ import { map } from 'rxjs/operators'
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private afAuth: AngularFireAuth) {}
-
-  getUserId(): Observable<string> {
-    return this.afAuth.authState.pipe(map((user) => (user ? user.uid : '')))
+  constructor(private afAuth: AngularFireAuth) {
+    // Enable session persistence (remember authentication state)
+    this.afAuth.setPersistence('session')
   }
 
-  // You can add more authentication-related methods here
+  getUserId(): Observable<string | null> {
+    return this.afAuth.authState.pipe(map((user) => (user ? user.uid : null)))
+  }
+
+  logout() {
+    return this.afAuth.signOut()
+  }
 }
