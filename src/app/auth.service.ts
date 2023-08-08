@@ -8,7 +8,6 @@ import { map } from 'rxjs/operators'
 })
 export class AuthService {
   constructor(private afAuth: AngularFireAuth) {
-    // Enable session persistence (remember authentication state)
     this.afAuth.setPersistence('session')
   }
 

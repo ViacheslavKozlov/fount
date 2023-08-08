@@ -32,10 +32,10 @@ The Fount test task App is a simple web application that allows users to create,
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/ViacheslavKozlov/fount.git`
-2.  Install dependencies: `npm ci`
+2. Install dependencies: `npm ci`
 3. Configure Firebase:
-- Create a Firebase project at https://console.firebase.google.com/
-- Update the Firebase configuration in `src/environments/environment.ts` with your project's configuration or use existed with follow cred's login: `slavick.cv@gmail.com`, password: `test-test`
+- Create a Firebase project at `https://console.firebase.google.com/`
+- Update the Firebase configuration in `src/environments/environment.ts` with your project's configuration and add your own user's creds or use existed configuration with follow cred's login: `test@test.com`, password: `test-test`
 
 ## Usage
 

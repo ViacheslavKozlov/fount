@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component'
 import { HomeComponent } from './home/home.component'
 import { CreateNoteComponent } from './create-note/create-note.component'
 import { NotesListComponent } from './notes-list/notes-list.component'
-import { AuthGuard } from './auth.guard' // Import AuthGuard
+import { AuthGuard } from './auth.guard'
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },

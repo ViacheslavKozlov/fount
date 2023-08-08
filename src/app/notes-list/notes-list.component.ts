@@ -10,7 +10,7 @@ import { Observable } from 'rxjs'
   styleUrls: ['./notes-list.component.css'],
 })
 export class NotesListComponent implements OnInit {
-  notes$!: Observable<Note[]> // Use an Observable for notes
+  notes$!: Observable<Note[]>
 
   constructor(
     private noteService: NoteService,
@@ -23,7 +23,6 @@ export class NotesListComponent implements OnInit {
 
   fetchUserNotes() {
     this.authService.getUserId().subscribe((userId) => {
-      console.log(userId)
       if (userId) {
         this.notes$ = this.noteService.getUserNotes(userId)
       }

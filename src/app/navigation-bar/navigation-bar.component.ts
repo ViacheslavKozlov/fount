@@ -29,7 +29,6 @@ export class NavigationBarComponent implements OnInit {
     this.authService
       .logout()
       .then(() => {
-        // Redirect to the login page after logout
         window.location.href = '/login'
       })
       .catch((error) => {

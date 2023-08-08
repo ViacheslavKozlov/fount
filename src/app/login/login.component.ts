@@ -16,7 +16,7 @@ export class LoginComponent {
   async login() {
     try {
       await this.afAuth.signInWithEmailAndPassword(this.email, this.password)
-      this.router.navigate(['/']) // Navigate to home on successful login
+      this.router.navigate(['/'])
     } catch (error) {
       console.error('Error logging in:', error)
     }

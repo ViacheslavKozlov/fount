@@ -24,7 +24,7 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
     CreateNoteComponent,
     NotesListComponent,
     LogoutButtonComponent,
-    NavigationBarComponent, // Include the NavigationBarComponent
+    NavigationBarComponent,
   ],
   imports: [
     BrowserModule,

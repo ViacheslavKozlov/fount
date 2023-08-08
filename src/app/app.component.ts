@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { Router, NavigationEnd } from '@angular/router' // Import Router and NavigationEnd
+import { Router, NavigationEnd } from '@angular/router'
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.isLoginPage = event.url === '/login' // Check if the current route is the login page
+        this.isLoginPage = event.url === '/login'
       }
     })
   }
