@@ -35,7 +35,7 @@ The Fount test task App is a simple web application that allows users to create,
 2.  Install dependencies: `npm ci`
 3. Configure Firebase:
 - Create a Firebase project at https://console.firebase.google.com/
-- Update the Firebase configuration in `src/environments/environment.ts` with your project's configuration.
+- Update the Firebase configuration in `src/environments/environment.ts` with your project's configuration or use existed (login: `slavick.cv@gmail.com`, password: `test-test`)
 
 ## Usage
 
@@ -62,7 +62,7 @@ The app uses Firebase for authentication and Firestore for data storage. Make su
 
 ## Notes Management
 
-- Before notes management pleases add your user to Firebase Authentication
+- Before notes management pleases add your user to Firebase Authentication use existed creds
 - Users can create new notes with a title and content after successful login
 - Created notes are stored in Firestore under the user's ID.
 - Users can view their list of created notes.
@@ -75,8 +75,3 @@ The app uses Firebase for authentication and Firestore for data storage. Make su
 ## Known Issues
 
 - No known issues at the moment.
-
-
-
-
-

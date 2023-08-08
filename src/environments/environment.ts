@@ -1,6 +1,3 @@
-// import { initializeApp } from 'firebase/app'
-// import { getAnalytics } from 'firebase/analytics'
-
 export const environment = {
   production: false,
   firebaseConfig: {
@@ -14,5 +11,3 @@ export const environment = {
   },
 }
 
-// const app = initializeApp(environment.firebaseConfig)
-// const analytics = getAnalytics(app)
