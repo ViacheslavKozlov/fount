@@ -11,8 +11,8 @@ export class NoteService {
 
   constructor(private firestore: AngularFirestore) {}
 
-  create(note: Note) {
-    return this.firestore.collection(this.notesPath).add(note)
+  createNote(note: { title: string; content: string; userId: string }) {
+    return this.firestore.collection('notes').add(note)
   }
 
   getUserNotes(userId: string): Observable<Note[]> {
