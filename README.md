@@ -36,7 +36,17 @@ The Fount test task App is a simple web application that allows users to create,
 3. Configure Firebase:
 - Create a Firebase project at `https://console.firebase.google.com/`
 - Update the Firebase configuration in `src/environments/environment.ts` with your project's configuration and add your own user's creds or use existed configuration with follow cred's login: `test@test.com`, password: `test-test`
-
+- Make sure you have `notes` collection in Firestore DB with following rules: 
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /notes/{noteId} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
+```
 ## Usage
 
 1. Run the development server: `npm run start`
